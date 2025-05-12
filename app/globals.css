@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(#0e2340, #232323 80%);
+  }
 
 @theme inline {
   --color-background: var(--background);
@@ -19,8 +20,52 @@
   }
 }
 
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
 }
+
+.outline-text {
+  -webkit-text-stroke: 1px white;
+}
+
+@layer utilities {
+  .text-10xl {
+    font-size: 10rem;
+  }
+  .text-11xl {
+    font-size: 11rem;
+  }
+  .text-12xl {
+    font-size: 12rem;
+  }
+  .text-13xl {
+    font-size: 13rem;
+  }
+  
+  .animate-horizontal-scroll {
+    animation: horizontal-scroll linear 16s infinite;
+  }
+  .animate-horizontal-scroll-2 {
+    animation: horizontal-scroll-2 linear 16s infinite;
+  }
+  
+  @keyframes horizontal-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes horizontal-scroll-2 {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+}
+
